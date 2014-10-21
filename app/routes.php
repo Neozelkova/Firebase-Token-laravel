@@ -26,3 +26,35 @@ Route::get('/home', function(){
 
 	return View::make('home')->with('token', $token);
 });
+
+Route::get('demo', function(){
+
+	$users = User::all();
+
+	
+
+	return View::make('users.index')->with('users', $users);
+});
+
+Route::get('posts', function(){
+
+	$posts = Post::all();
+
+	
+
+	return View::make('users.posts')->with('posts', $posts);
+});
+
+Route::get('products', function(){
+
+	$products = Product::all();
+
+	return View::make('users.products')->with('products', $products);
+});
+
+Route::get('/location', function(){
+
+	$countries = Country::all();
+
+	return View::make('users.place')->with('countries', $countries);
+});
